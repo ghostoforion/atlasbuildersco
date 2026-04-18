@@ -120,7 +120,7 @@ ul { list-style: none; }
 
 /* Logo */
 .logo { display: flex; align-items: center; flex-shrink: 0; }
-.logo-img { height: 52px; width: auto; display: block; }
+.logo-img { height: 52px; width: auto; display: block; mix-blend-mode: multiply; }
 .logo-name { font-size: 1.2rem; font-weight: 900; color: var(--navy); letter-spacing: .08em; }
 .logo-sub  { font-size: .65rem; font-weight: 600; color: var(--gray); letter-spacing: .15em; text-transform: uppercase; }
 
