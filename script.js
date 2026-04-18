@@ -36,7 +36,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ── ESTIMATE FORM SUBMIT ─────────────────
 const form = document.getElementById('estimateForm');
-form.addEventListener('submit', e => {
+if (form) form.addEventListener('submit', e => {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"]');
   btn.textContent = 'Submitting...';
@@ -51,7 +51,7 @@ form.addEventListener('submit', e => {
       </div>
     `;
   }, 1200);
-});
+});}
 
 // ── INTERSECTION OBSERVER — FADE IN ──────
 const fadeEls = document.querySelectorAll(
