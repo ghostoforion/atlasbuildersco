@@ -4,6 +4,25 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 10);
 });
 
+// ── DROPDOWN MENUS (click to open) ───────
+document.querySelectorAll('.nav-item.has-dropdown > a').forEach(trigger => {
+  trigger.addEventListener('click', e => {
+    e.preventDefault();
+    const item = trigger.parentElement;
+    const isOpen = item.classList.contains('open');
+    // Close all open dropdowns
+    document.querySelectorAll('.nav-item.open').forEach(el => el.classList.remove('open'));
+    // Toggle clicked one
+    if (!isOpen) item.classList.add('open');
+  });
+});
+// Close dropdowns when clicking outside
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-item.has-dropdown')) {
+    document.querySelectorAll('.nav-item.open').forEach(el => el.classList.remove('open'));
+  }
+});
+
 // ── HAMBURGER / MOBILE NAV ───────────────
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobile-nav');
